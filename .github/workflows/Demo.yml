@@ -5,6 +5,6 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: first demo
-        run: echo "first demo workflow"
-      - name: print done
-        run: echo "done!" 
+        run: |
+          echo "first demo workflow to run multiple shell commands once"
+          echo "done!" 
