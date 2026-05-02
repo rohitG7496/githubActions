@@ -1,0 +1,12 @@
+name: id example
+on: workflow_dispatch
+jobs:
+  runs-on: ubuntu-latest
+steps:
+  - name: Generate build number
+    id: build_id  # <--- Programmatic ID
+    run: echo "num=1.2.${{ github.run_number }}" >> $GITHUB_OUTPUT
+
+  - name: Use the build number
+    # Accessing output via the ID 'build_id'
+    run: echo "The version is ${{ steps.build_id.outputs.num }}"
